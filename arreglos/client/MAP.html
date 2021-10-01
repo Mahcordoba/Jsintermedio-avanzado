@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map</title>
+</head>
+<body>
+    <h2>Map</h2>
+    <p>Es una funcion estatica de los arreglos y esta sirve para trasformar un arreglo esta es una funcion inmutable lo que quiere decir que el array original no se modificarar</p>
+    <h3>Resumen de un comentario en platzi</h3>
+    <p>
+        <b>Lo más sencillo:</b>
+        <br>
+        ¿Qué hace el .map()? TRANSFORMAR.
+        <br>
+        .map() es INMUTABLE por lo tanto no modifica el array original, sino que crea uno nuevo con la “transformación” aplicada.
+        <br>
+        Además, mantienes el mismo length que el array original, te devuelve en el nuevo array la misma cantidad que el array que le aplicaste el método.
+    </p>
+    <h2>map reload</h2>
+    <p>
+        Usos comunes o clásicos de map() sobre los arrays:
+        <br>
+        Limpiar datos, seleccionar datos dentro de un array y devolverlos para su utilización en futuras acciones.
+        Añadir un nuevo elemento, modificar agregando un nuevo dato al objeto pero sin modificar el array original.
+        <br>
+        Tener en cuenta que cuando trabajamos con objetos y map() y retornamos el mismo objeto estamos copiando la referencia en memoria que tiene el objeto original que le aplicamos el map() (esto lo vimos en la clase de mutable vs inmutable, te dejo una lectura: https://platzi.com/tutoriales/1642-javascript-profesional/4559-estructuras-de-datos-inmutables/). Esto provoca que como estamos modificando la referencia en memoria, el array original también sea modificado. Entonces en conclusión, por más que map() sea inmutable en este punto estamos copiando la referencia en memoria y por eso hace el cambio en el original.
+    </p>
+    <p><b>
+        const rta = orders.map(item => {
+            item.tax = .19
+            return item;
+        })
+    </b></p>
+    <p>
+        Para evitarlo, y poder realizar una copia y evitar la referencia en memoria, utilizamos el spread operator de ES6 (https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Spread_syntax), donde generamos un nuevo objeto con los valores del objeto original y luego agregamos el nuevo valor que nos interesa. 
+    </p>
+    <p><b>
+        const rta = orders.map(item => {
+            return {
+                ...item,
+                tax: .19,
+            }
+    </b></p>
+    <p>Ejemplo en server archivo map-reload</p>
+    <div id="app"></div>
+    <script>
+        const app = document.getElementById('app')
+        const product = [
+            {title: 'Burger', price: 121},
+            {title: 'pizza', price: 20},
+        ]
+        const newArray = product.map(producto =>{
+            return `<li>${producto.title} - ${producto.price}</li>`
+        })
+        app.innerHTML += newArray.join('')
+    </script>
+</body>
+</html>

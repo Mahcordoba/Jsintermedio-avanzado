@@ -1,0 +1,15 @@
+// A diferencia de some que solo importa si uno tiene la condicion, every es al contrario todos deben cumplir la condicion
+
+const numbers = [1,30,49,10,13]
+let rta = true
+for (let index = 0; index < numbers.length; index++) {
+    const element = numbers[index];
+    if(element >= 40)
+    {
+        rta= false
+    }
+}
+console.log('For ', rta)
+// con every
+const rta2 = numbers.every(item => item <= 40)
+console.log('rta2', rta2)
