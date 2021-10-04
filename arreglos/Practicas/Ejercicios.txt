@@ -1,0 +1,2 @@
+https://github.com/DesafioLatam/guia-de-ejercicios-javascript/blob/master/ejercicios.md
+En esta pagina buscar la seccion de los arrays y hacer todos los ejercicios para practicar estos terminan con la seccion de matrices

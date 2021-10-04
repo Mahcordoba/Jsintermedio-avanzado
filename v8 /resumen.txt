@@ -1,0 +1,37 @@
+JavaScript es un lenguaje de programación que se utiliza principalmente para crear páginas web dinámicas; Fue desarrollado originalmente por Brendan Eich de Netscape con el nombre de Mocha, el cual fue renombrado posteriormente a LiveScript, para finalmente quedar como JavaScript en el año 1995.
+Ecma nace en 1997 y es la encargada de los estandares que debe seguir la web.
+En el 2008 google saca su navegador Chrone y este trae con sigo la herramienta v8.
+Node js nace en 1999 y su criador Ryan dahl lo desarrolla con el proyecto v8 de google.
+En el 2010 nace angular y el inicio de los frameworks de js 
+En el 2015 llega ES6.
+
+JavaScript Engine
+Es el motor de JS, siempre corre en el navegador.
+
+Su función es interpretar el código JavaScript y convertirlo a Machine Code para que la máquina pueda entenderlo.
+
+    Just in time compiler: Es la compilación en tiempo real que sucede en el proceso del Engine.
+V8 y javaScript 
+
+V8 motor de javaScript de Chrone fue creado inicialmente para mejorar la velocidad de google maps de la web, con el tiempo este motor a ido mejorandoce y esto a echo que sea el motor por defecto de la mayoria de los navegadores nodejs tambien corre con el v8.
+
+Lo primero que hace el motor es generar un Global Environment  y este hace 3 cosas genera un objecto global y este se le suele concoer como window, el segundo crea la variable this en este caso es igual a window y tercero empiesa el contexto de ejecución  y en esta parte enpieza a correr nuestro codigo y esto lo va haciendo como un stack de tareas las cuales las va  apilando una por una.
+Lo primero que hase js es hacer un parceo del documento y esto es importante ya que le ayuda a identificar los keyWorks 
+Segundo es ast que es como un arbol para mas info puedes escribir en google  ast explorer.
+Tercero En este paso recibe el arbol anterior y gracias a esto lo puede interpretar linea por linea. En este paso sucede el hoisting ya que el navegador lo que busca es optimizar el codigo luego este paso genera un Bytcode este lenguaje si lo entiende las maquinas no es tan bajo como el codigo binario.
+
+Código de ejecución
+Js es un leguaje single thread (Synchronous) Lo que quiere decir que solo puede hacer una tarea a la vez 
+
+Memory heap  es como una repiza donde se almacenan las variables "Libros" en un espacio de esa repisa pero lo hace de manera aleatoria pero guarda la direccion donde esta la variable y así cuando necesite acceder simplemente va a la direccion que tiene guardada 
+
+Call Stack o pila de ejecución
+Lo que hace es que va apilando las ejecuciones empezando con el objecto global y de abajo hacia arriba va creando la ejecucion y a medida que va terminando la ejecucion esta es retirada de la pila y la ultima en retirarse es el objecto global.
+
+Garbage Collection
+Limpia la memoria de los datos no utilizados para no sobrecargarla y seguir trabajando sin problemas.
+Si hace el proceso de Mark and Sweep para limpiar las variables que fueron renombradas, Cuando hay un ciclo for las variable siempre se renombrar y las anteriores se quedan hay pero bueno para eso esta Garbage collection que limpia estas variables inservibles.
+
+Stack overflow
+
+Esto sucede cuando se desborda la pila de ejecucion y esto ocaciona que el navegador se rompa, pero google chrone implemento un limite y si be que hay una instruccion que pueda ocacionar un satck overflow la detiene inmediatamente, esto puede ocurrir con funciones infinitas.

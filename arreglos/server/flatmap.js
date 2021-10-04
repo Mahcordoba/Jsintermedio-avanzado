@@ -5,7 +5,8 @@ const users = [
     {userId:1, userName: 'Tom', atributes:['Nice','Cool']},
 ]
 //Como antes se hacia 
-const rta = users.map(user => user.atributes).flat();
+let rta = users.map((user) => user.atributes).flat()
 console.log('rta', rta)
 //Con flatMAp
 const rta1 = users.flatMap(user => user.atributes)
+console.table(users)
