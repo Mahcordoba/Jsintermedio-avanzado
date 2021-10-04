@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+    <script>
+        const lista = [1,2,3,4,5,6]
+        let recorrido = 0
+        while (recorrido<lista.length) {
+            alert(lista[recorrido])
+            recorrido++
+        }
+        for(let i=0; i<lista.length;i++)
+        {
+            console.log('Soy el for ' + lista[i])
+        }
+        lista.forEach(index => console.log('For each '+ index))
+        lista.forEach(index => alert(index+1))
+        const lista2 = lista.map(element => element+1)
+        let promedio = lista.reduce((suma,elemento)=> suma + elemento,0)/lista.length
+        let promedio2 = lista2.reduce((suma,elemento)=> suma + elemento)/lista2.length
+    </script>
+</body>
+</html>

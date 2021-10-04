@@ -1,7 +1,7 @@
 JavaScript es un lenguaje de programación que se utiliza principalmente para crear páginas web dinámicas; Fue desarrollado originalmente por Brendan Eich de Netscape con el nombre de Mocha, el cual fue renombrado posteriormente a LiveScript, para finalmente quedar como JavaScript en el año 1995.
 Ecma nace en 1997 y es la encargada de los estandares que debe seguir la web.
 En el 2008 google saca su navegador Chrone y este trae con sigo la herramienta v8.
-Node js nace en 1999 y su criador Ryan dahl lo desarrolla con el proyecto v8 de google.
+Node js nace en 2009 y su criador Ryan dahl lo desarrolla con el proyecto v8 de google.
 En el 2010 nace angular y el inicio de los frameworks de js 
 En el 2015 llega ES6.
 
