@@ -1,0 +1,1 @@
+Esta tecnologia se trata de que si hay un error en el codigo y no sabes que paso, la idea es cojer un objecto inanimado y explicarle tu codigo para y así poder encontrar el error
