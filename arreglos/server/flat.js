@@ -1,3 +1,5 @@
+//Ojo para tener en cuenta 
+// Esta funcion es reciente antes de usarla en un proyecto real verificar si los navegadores ya la tienen implementada recuerda este proceso puede tardar años
 //Es para manipular arrays que tienen en su interior mas arrays y asi convertirlos en una sola linea 
 const matriz = [
     [1,2,3],
