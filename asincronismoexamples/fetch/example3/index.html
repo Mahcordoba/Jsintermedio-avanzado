@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo 3 de fetch</title>
+</head>
+<body>
+    <script>
+        let data = new FormData()
+
+        data.append('a', 5)
+        data.append('b', 5)
+
+        fetch('servidor.php',{
+            method: 'POST',
+            body: data
+        })//El segundo parametro es para cambiar el metodo por defecto que es get
+          .then(function(response){
+            if(response.ok)
+            {
+                return response.text()
+            }else
+            {
+                throw 'Error en la llamada'
+            }
+          })
+          .then(function(texto){
+              console.log(texto)
+          })
+          .catch(function(error){
+              console.log(error)
+          })
+    </script>
+</body>
+</html>

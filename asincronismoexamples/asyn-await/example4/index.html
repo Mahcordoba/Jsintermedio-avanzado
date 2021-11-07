@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ultimo ejemplo de async/ await</title>
+</head>
+<body>
+    <script>
+        const searchPokemon = async ()=>
+        {
+            const res = await fetch('https://pokeapi.co/api/v2/pokemon/15')
+            if(res.ok)
+            {
+                const poke = await res.json()
+                console.log(poke.name)
+            }else
+            {
+                console.log('Tubimos un problema busacando el pokemon que necesitabas')
+            }
+        }
+        searchPokemon()
+    </script>
+</body>
+</html>
