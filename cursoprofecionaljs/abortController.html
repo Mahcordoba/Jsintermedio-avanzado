@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p><em>Abre la consola</em></p>
+    <img  id='img' alt="Es una imagen" id="huge-image" height="400">
+
+    <button id="load">Load HUGE Image</button>
+    <button id="stop" disabled>Stop Fetching</button>
+
+    <script>
+        const url = 'https://images.pexels.com/photos/9824398/pexels-photo-9824398.jpeg?cs=srgb&dl=pexels-nikita-nikitin-9824398.jpg&fm=jpg'
+        const img = document.getElementById('img')
+        const loadButton = document.getElementById('load') 
+        const stopButton = document.getElementById('stop') 
+        let controller
+
+        function starLoading()
+        {
+            loadButton.disabled = true
+            loadButton.innerText = 'Loading...'
+            stopButton.disabled = false
+        }
+        function stopLoading()
+        {
+            loadButton.disabled = false
+            loadButton.innerText = 'Load HUGE Image'
+            stopButton.disabled= true
+        }        
+        loadButton.onclick = async function()
+        {
+            starLoading()
+            try {
+                controller = new AbortController()
+
+                const response = await fetch(url, { signal: controller.signal})
+                const blob = await response.blob()
+                const imgUrl = URL.createObjectURL(blob)
+
+                img.src=imgUrl
+                
+            } catch (error) {
+                console.log('Detuvimos la imagen a tu peticion')
+            }
+
+            stopLoading()
+        }
+        stopButton.onclick = function()
+        {
+            controller.abort()
+            stopLoading()
+        }
+    </script>
+</body>
+</html>
