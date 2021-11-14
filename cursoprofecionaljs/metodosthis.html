@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones para el this</title>
+</head>
+<body>
+    <p><em>Abre la consola</em></p>
+
+    <ul>
+        <li><button class="call-to-action">Aprender</button></li>
+        <li><button class="call-to-action">Aprender más</button></li>
+        <li><button class="call-to-action">!Nuca pares de aprender¡</button></li>
+    </ul>
+    <script>
+        //Establecer thiss 
+        //función call
+        function saludar()
+        {
+            console.log(`Hola. soy ${this.name} ${this.lastName}`)
+        }
+        const richart = { name: 'Richard', lastName: 'Kaufman Lópes'}
+        
+        saludar.call(richart)
+
+        function caminar(metros,direccion)
+        {
+            console.log(`${this.name} camina ${metros} metros hacia el ${direccion}`)
+        }
+
+        caminar.call(richart, 400, 'sur')
+
+        // función apply
+
+        caminar.apply(richart, [800,'Norte'])
+
+        /*
+        Para tener en cuenta 
+        Call para agregar los argumentos de una funcion usamos comas para separarlos
+        apply se usan arrays para agregar los argumentos de una funcion
+        */
+
+        // funtion bind
+
+        // Esta funcion crea una nueva función.
+        const daniel = {name: 'Daniel', lastName:'Sanchez'}
+        const rick = {name:'Rick', lastName:'Morty'}
+        const danielSaluda = saludar.bind(daniel)
+        danielSaluda()
+        // si la funcion tiene parametros no hay necesidad de escrirlos o se pueden escribir todos o algunos se tienen que se parar por comas
+
+        const danielCamina = caminar.bind(daniel)
+        danielCamina(1000,'Norte')
+        const rickCamina = caminar.bind(rick, 1000)
+        rickCamina('Noreste')
+        // Cuándo es util usar uno de estos métodos
+        const buttons = document.getElementsByClassName('call-to-action') // Para tener en cuenta este es un elemto que pertenece al nodeList
+        // Los NodeList se parecen a los arreglos pero no lo son del todo pero tienen una propiedad que es la length y esta es suficiente para llamar propiedades que funcionen con los arreglos
+
+        Array.prototype.forEach.call(buttons, button => 
+        {
+            button.onclick = () => alert('Nunca pares de aprender')
+        })
+    </script>
+</body>
+</html>

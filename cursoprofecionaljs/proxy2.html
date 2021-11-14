@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Proxies se implementa desde es6
+        var empleado = {
+            nombre: '',
+            apellido: '',
+            password: '123fadfasdf3'
+        }
+
+        function valida(prop, value)
+        {
+            const keys = Object.keys(empleado)
+            const propInvalida = keys.indexOf(prop) === -1
+            if(propInvalida)
+            {
+                console.error('Propiedad invalidad')
+                return false
+            }
+            if((prop === 'apellido' || prop === 'nombre') && /\d/.test(value)){
+                console.error(`El valor de la propiedad ${prop} es invalido`)
+                return false
+            }
+            return true
+        }
+        var handler = {
+            set(obj, prop, value)
+            {
+                if(valida(prop, value))
+                {
+                    obj[prop]= value;
+                }
+            },
+            get(obj,prop)
+            {
+                if(prop === 'password')
+                {
+                    return '*'.repeat(obj[prop].length)
+                }
+                if(prop === 'nombreCompleto')
+                {
+                    return `${obj['nombre']} $${obj['apellido']}` 
+                }
+                return obj[prop]
+            }
+        }
+
+        var pEmpleado = new Proxy(empleado,handler)
+
+        pEmpleado.nombre = 'Miguel'
+        pEmpleado.apellido = 'Herrera'
+        pEmpleado.id = 'sadas6'
+        console.log(pEmpleado.nombre)
+        console.log(pEmpleado.password)
+        console.log(pEmpleado.nombreCompleto)
+    </script>
+</body>
+</html>

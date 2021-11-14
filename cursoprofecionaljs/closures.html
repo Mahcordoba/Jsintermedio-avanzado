@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //IIFE
+        (function(){
+            let color = 'green'
+
+            function printColor()
+            {
+                console.log(color)
+            }
+            printColor()
+        })()
+        // Funciones que regresan funciones 
+
+        function makeColorPrinter(color)
+        {
+            let colorMesage = `The color is ${color}`
+            return function()
+            {
+                console.log(colorMesage)
+            }
+        }
+
+        let greenColorPrinter = makeColorPrinter('green')
+        console.log(greenColorPrinter())
+
+        // Variables "Privadas"
+        //Gracias a que se pueden devolver funciones en una funcion se puede crear variables "privadas"
+
+        function makeCounter(n)
+        {
+            let count = n
+            return {
+                increase: function()
+                {
+                    count++
+                },
+                decrease: function()
+                {
+                    count--
+                },
+                getCount: function()
+                {
+                    return count
+                }
+            }
+        }
+        let counter = makeCounter(8)
+        console.log('The count is', counter.getCount())
+    </script>
+</body>
+</html>
