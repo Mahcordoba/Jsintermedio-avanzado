@@ -204,6 +204,80 @@ Los navegadores no entienden TypeScript así que lo vamos a transpilar a JavaScr
     any. Cualquier tipo.
     object. Del tipo objeto.
 
+//::::::::Patrones de diseñol ::::::::::::::::::::::::
+
+Son soluciones generales ya probadas dentro de un contexto que las limita a problemas frecuentes que nos encontramos en el desarrollo de software.
+
+Beneficios
+
+    Los patrones de diseño son una caja de Herramientas de soluciones bien probadas a problemas comunes de diseño de software
+
+    Te proveen un lenguaje común que permite comunicarse de forma específica y eficiente
+
+Para tener en cuenta 
+
+    Siempre busca pensar en término de diseño no de patrones
+
+    Usa un patrón cuando hay una necesidad natural de usarlos Ojo recuerda estos agregan mas complejidad a una app 
+
+    Di existe una alternativa más simple prefierela.
+
+Categorias de patrones de diseño
+
+    Creacional: Proveen diferentes mecanismo para crear objectos
+        Abstract Factory
+        Builder
+        Factory Method
+        Prototype
+        Singleton
+    Estructurales: Describen formas de componer objectos para formar nuevas estructuras flexibles y efeicientes 
+        Adapter
+        Bridge
+        Composite
+        Decorator
+        Facade
+        Flyweight
+        Proxy    
+
+    ️Comportamiento: Gestionan algoritmos y responsabilidades entre objetos.
+        Chain of Responsibility
+        Command
+        Interpreter
+        Iterator
+        Mediator
+        Memento
+        Observer
+        State
+        Strategy
+        Template Method
+        Visitor   
+
+    Ejemplos y casos de uso:
+                Patrón Singleton
+        Es un patrón que te asegura que una clase solo tiene una instancia. Esta única instancia puede ser consumida por cualquier otro objeto. 
+    
+                Patrón Observer
+        El patrón observer se compone de un sujeto que ofrece mecanismos de suscripción y desuscripción a múltiples observadores que quieren ser notificados de los cambios en dicho sujeto. Cada observador expone un método de update que es usado por el sujeto para notificar cualquier cambio a todos los suscritos.
+
+        Es uno de los patrones más utilizados, algunos ejemplos típicos son:
+
+            Newsletter
+            Sockets
+            Listeners en páginas web
+        
+        Redux es la libreria de react que usa el patron observer.
+    
+            Patrón Decorator
+        Añade nuevas responsabilidades a un objeto de forma dinámica permitiendo así extender su funcionalidad sin tener que usar subclases.
+
+          
+
+
+:::::::::::::::::::::::::::::::::
+Fraces de desarrollo 
+:::::::::::::::::::::::::::::::::
+
+    Una entidad de software (clase,módulo, función, etc) debe quedar abierta para su extensión pero cerrada para su modificación  Esto pertenece (Open Closed Principle)
 
 ::::::::::::::::::::::::::::::::
 Investigar mas sobre 
@@ -214,4 +288,7 @@ Investigar mas sobre
 - Api Page Visibility
 - Service Worker API
 - Ver los videos de https://www.youtube.com/watch?v=aUtWHiV3RJg
-- Interfaces en js
+- Interfaces en TypeScript
+- Mirar esta pagina https://every-layout.dev/  patron de siseño de paginas web 
+- Investigar sobre el principo Open Closed Principle "Pricipio de abierto y cerrado"
+
